@@ -1,5 +1,6 @@
 import React from 'react';
 import './Home.css';
+import Enterpage from '../../pages/Enterpage/Enterpage.js'
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 
 const Home = (props) => {
@@ -8,12 +9,12 @@ const Home = (props) => {
           <br></br><br></br><br></br>
       <div className="home-img">
         <div className="home-div">
-          {/* <Link to="/enter" className="enter"><em>enter</em></Link>
+          <Link to="/enterpage" className="enter"><em>enter</em></Link>
           <Router>
-          <Route exact path="/enter" render={(props) => (
-            <EnterPage {...props} />
+          <Route exact path="/enterpage" render={(props) => (
+            <Enterpage {...props} />
           )} />
-          </Router> */}
+          </Router>
         </div>
       </div>
     </div>
