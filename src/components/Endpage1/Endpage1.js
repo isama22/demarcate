@@ -4,9 +4,13 @@ import "./Endpage1.css";
 
 class Endpage1 extends React.Component {
 
+handleAddLine = (e) => {
+    e.preventDefault();
+    this.props.addLine(e)
+};
 
   render() {
-    // const { props } = this;
+    const { props } = this;
     return (
       <div className="main-div">
         <br></br>
@@ -41,6 +45,27 @@ class Endpage1 extends React.Component {
               ...
             </a>
           </p>
+          <br/><br/>
+          <section>
+              {props.lines.map((l) => (
+                  <article key={l.line}>
+                      <div>{l.line}</div>
+                      <div>{l.text}</div>
+                  </article>
+              ))}
+              <form ref={props.formRef} onSubmit={props.addLine}>
+                  <label>
+                      <span>line</span>
+                      <input 
+                      name="line"
+                      value={props.newLine.line}
+                      onChange={props.handleChange}
+                      />
+                  </label>
+                  <button onClick={props.addLine} disabled={props.formInvalid}>add a line</button>
+              </form>
+          </section>
+          
         </div>
       </div>
     );
