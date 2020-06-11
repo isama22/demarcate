@@ -1,5 +1,6 @@
 import React from "react";
 import "./Endpage1.css";
+import Navbar from '../../components/Navbar/Navbar';
 // import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 
 class Endpage1 extends React.Component {
@@ -13,6 +14,7 @@ handleAddLine = (e) => {
     const { props } = this;
     return (
       <div className="main-div">
+        <Navbar />
         <br></br>
         <br></br>
         <br></br>
