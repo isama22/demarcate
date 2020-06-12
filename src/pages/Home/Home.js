@@ -7,7 +7,7 @@ import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 const Home = (props) => {
   return (
     <div className="Home">
-       <Navbar />
+       <Navbar user={props.user} handleLogout={props.handleLogout}/>
           <br></br><br></br><br></br>
       <div className="home-img">
         <div className="home-div">

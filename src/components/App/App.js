@@ -1,4 +1,5 @@
 import React from "react";
+import './App.css';
 import Home from '../../pages/Home/Home.js';
 import Enterpage from '../../pages/Enterpage/Enterpage.js';
 import Dana1 from '../../pages/Dana/Dana1/Dana1.js'
@@ -55,7 +56,9 @@ class App extends React.Component {
       <div className="App">
         <Router>
           <Route exact path='/' render={(props) => (
-            <Home {...props}
+            <Home 
+            user={this.state.user} handleLogout={this.state.handleLogout}
+            {...props}
             />
           )}
           />
