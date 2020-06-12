@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 // import './LoginPage.css';
-import Navbar from '../../components/Navbar/Navbar';
+import userService from '../../utils/userService';
+
 
 class LoginPage extends Component {
   
@@ -11,17 +12,28 @@ class LoginPage extends Component {
   };
 
   handleChange = (e) => {
-    // TODO: implement in an elegant way
+    this.setState({
+      // Using ES2015 Computed Property Names
+      [e.target.name]: e.target.value
+    });
   }
 
-  handleSubmit = (e) => {
+  handleSubmit = async (e) => {
     e.preventDefault();
+    try {
+      await userService.login(this.state);
+      this.props.handleSignupOrLogin();
+      // Successfully signed up - show GamePage
+      this.props.history.push('/');
+    } catch (err) {
+      // Invalid user data (probably duplicate email)
+      alert('Invalid Credentials!')
+    }
   }
 
   render() {
     return (
       <div className="LoginPage">
-          <Navbar />
         <header className="header-footer">Log In</header>
         <form className="form-horizontal" onSubmit={this.handleSubmit} >
           <div className="form-group">

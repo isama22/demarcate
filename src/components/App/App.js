@@ -9,6 +9,7 @@ import Endpage1 from '../../components/Endpage1/Endpage1.js'
 import SignupPage from '../SignupPage/SignupPage';
 import LoginPage from '../LoginPage/LoginPage';
 import userService from "../../utils/userService";
+import NavBar from '../../components/NavBar/NavBar';
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
 class App extends React.Component {
@@ -55,9 +56,9 @@ class App extends React.Component {
     return (
       <div className="App">
         <Router>
+        <NavBar user={this.state.user} handleLogout={this.handleLogout} />
           <Route exact path='/' render={(props) => (
             <Home 
-            user={this.state.user} handleLogout={this.state.handleLogout}
             {...props}
             />
           )}

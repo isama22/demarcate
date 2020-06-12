@@ -1,13 +1,11 @@
 import React from 'react';
 import './Home.css';
 import Enterpage from '../../pages/Enterpage/Enterpage.js'
-import Navbar from '../../components/Navbar/Navbar';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 
 const Home = (props) => {
   return (
     <div className="Home">
-       <Navbar user={props.user} handleLogout={props.handleLogout}/>
           <br></br><br></br><br></br>
       <div className="home-img">
         <div className="home-div">
